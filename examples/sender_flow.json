@@ -1,0 +1,55 @@
+[
+    {
+        "id": "d7f0ecdd28a15952",
+        "type": "tab",
+        "label": "Sender",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "3710e299d36dc7c2",
+        "type": "inject",
+        "z": "d7f0ecdd28a15952",
+        "name": "-c \"BotFather\" -m \"/start\"",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "-c \"BotFather\" -m \"/start\"",
+        "payloadType": "str",
+        "x": 190,
+        "y": 120,
+        "wires": [
+            [
+                "de4ce4c1c6b3f288"
+            ]
+        ]
+    },
+    {
+        "id": "de4ce4c1c6b3f288",
+        "type": "exec",
+        "z": "d7f0ecdd28a15952",
+        "command": "source ~/telegram_node_red/.venv/bin/activate && cd ~/telegram_node_red && python sender.py",
+        "addpay": "payload",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "sender",
+        "x": 430,
+        "y": 120,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    }
+]

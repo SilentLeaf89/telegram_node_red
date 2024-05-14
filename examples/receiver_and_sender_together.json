@@ -1,0 +1,99 @@
+[
+    {
+        "id": "007c73b4d93d06b6",
+        "type": "tab",
+        "label": "Receiver + Sender",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "91f291d2f51f7ec8",
+        "type": "pythonshell in",
+        "z": "007c73b4d93d06b6",
+        "name": "receiver ",
+        "pyfile": "/home/monk/telegram_node_red/receiver_all.py",
+        "virtualenv": "/home/monk/telegram_node_red/.venv",
+        "continuous": true,
+        "stdInData": false,
+        "x": 400,
+        "y": 140,
+        "wires": [
+            [
+                "6f3e5dfe6333ed73"
+            ]
+        ]
+    },
+    {
+        "id": "6f3e5dfe6333ed73",
+        "type": "debug",
+        "z": "007c73b4d93d06b6",
+        "name": "debug",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 590,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "95ac7e0402da9bab",
+        "type": "inject",
+        "z": "007c73b4d93d06b6",
+        "name": "-c \"BotFather\" -m \"/start\"",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "-c \"BotFather\" -m \"/start\"",
+        "payloadType": "str",
+        "x": 150,
+        "y": 260,
+        "wires": [
+            [
+                "ed746e67aeb2def5"
+            ]
+        ]
+    },
+    {
+        "id": "ed746e67aeb2def5",
+        "type": "exec",
+        "z": "007c73b4d93d06b6",
+        "command": "source ~/telegram_node_red_2/.venv/bin/activate && cd ~/telegram_node_red_2 && python sender.py",
+        "addpay": "payload",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "sender",
+        "x": 390,
+        "y": 260,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "98504d0dddffcdd1",
+        "type": "comment",
+        "z": "007c73b4d93d06b6",
+        "name": "! Different environments !",
+        "info": "",
+        "x": 390,
+        "y": 200,
+        "wires": []
+    }
+]

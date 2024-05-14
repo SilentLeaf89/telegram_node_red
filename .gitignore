@@ -1,0 +1,11 @@
+__pycache__/
+
+
+# Environments
+.env
+.env_plus
+.env_receiver
+.venv
+
+# telethon
+anon.session
